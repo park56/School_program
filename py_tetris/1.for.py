@@ -42,14 +42,14 @@ def delete_block():
     
 def overlap_check(pmx,pmy):
     
-    tbackground = background[y+pmy:y+4+pmy,x+pmx:x+4+pmx]
-    
-    if tbackground.shape != block_L.shape:
-        return False
-    
-    if np.sum(tbackground & block_L) > 0:
-        return False
+    for j in range(0,4):
+        for i in range(0,4):
+            if block_L[j,i] == 1 and background[j+pmy+y,i+pmx+x] == 1:
+                return False
     return True
+            
+            
+    
         
 background = np.array([[1,1,1,1,1,1,1,1,1,1,1,1],
                        [1,0,0,0,0,0,0,0,0,0,0,1],
