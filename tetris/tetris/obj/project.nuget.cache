@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4piL1ENo4nC1bzElGcSYV07y55hOp/i7M+uybZVlrH0niuKg5Du84L+9XFH/ne96NVaFysTLPcHFxBSzV3A3EQ==",
+  "dgSpecHash": "yxom5J450hkV1d1hcUiCYAeW+4TGnpC+G4uLxbQJ7a9jEpx2lR7BwEZQxo0Ly0Xc3NgN9h7QpVHpOyyFgL5kbQ==",
   "success": true,
-  "projectFilePath": "/Users/sunghan/projects/c#/tetris/tetris/tetris.csproj",
+  "projectFilePath": "/Users/sunghan/school_study/projects/c#/tetris/tetris/tetris.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

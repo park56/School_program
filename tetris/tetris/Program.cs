@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using System.Threading;
+using Internal;
 
 namespace ConsoleApp2
 {
@@ -98,6 +99,28 @@ namespace ConsoleApp2
             }
         }
 
+        static void print_background()
+        {
+            int x_pos = 14;
+            int y_pos = 0;
+            for (int j = 0; j < 22; j++)
+            {
+                for (int i = 0; i < 12; i++)
+                {
+                    if (background[j, i] == 1)
+                    {
+                        Console.SetCursorPosition(i + x_pos, j + y_pos);
+                        Console.Write("1");
+                    }
+                    else
+                    {
+                        Console.SetCursorPosition(i + x_pos, j + y_pos);
+                        Console.Write("0");
+                    }
+                }
+            }
+        }
+
         static void make_block()
         {
             for (int j = 0; j < 4; j++)
@@ -173,6 +196,48 @@ namespace ConsoleApp2
             return overlap_cnt;
         }
 
+        static void insert_block()
+        {
+            for (int j = 0; j < 4; j++)
+            {
+                for (int i = 0; i < 4; i++)
+                {
+                    if (block_L[rotate, j, i] ==1)
+                    {
+                        background[j+y,i+x] = 1;
+                    }
+
+                }
+            }
+        }
+
+        static void line_check(int line_num)
+        {
+            int count_block = 0;
+            for(int i =0; i < 10; i++)
+            {
+                if (background[line_num,i+1] == 1)
+                {
+                    count_block++;
+                }
+            }
+
+            if(count_block == 10)
+            {
+
+                for(int j = line_num; j > 1; j--)
+                {
+\                    for(int i = 0; i < 10; i++)
+                    {
+                        background[j, i + 1] = background[j - 1, i + 1];
+                    }
+                }
+
+                make_background();
+                print_background();
+            }
+        }
+
         static void Main(string[] args)
         {
             ConsoleKeyInfo key_value;
@@ -244,6 +309,20 @@ namespace ConsoleApp2
                         make_block();
                     }
                 }
+                else
+                {
+                    insert_block();
+                    print_background();
+                    
+                    x = 3;
+                    y = 3;
+                }
+
+                for(int i = 0; i< 22; i++)
+                {
+                    line_check(i);
+                }
+
                 Thread.Sleep(10);
                 cnt++;
             }

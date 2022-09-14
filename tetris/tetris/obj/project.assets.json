@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/sunghan/projects/c#/tetris/tetris/tetris.csproj",
+      "projectUniqueName": "/Users/sunghan/school_study/projects/c#/tetris/tetris/tetris.csproj",
       "projectName": "tetris",
-      "projectPath": "/Users/sunghan/projects/c#/tetris/tetris/tetris.csproj",
+      "projectPath": "/Users/sunghan/school_study/projects/c#/tetris/tetris/tetris.csproj",
       "packagesPath": "/Users/sunghan/.nuget/packages/",
-      "outputPath": "/Users/sunghan/projects/c#/tetris/tetris/obj/",
+      "outputPath": "/Users/sunghan/school_study/projects/c#/tetris/tetris/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/sunghan/.nuget/NuGet/NuGet.Config"
